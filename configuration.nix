@@ -11,11 +11,12 @@
     ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+boot.loader.systemd-boot.enable = true;
+boot.loader.efi.canTouchEfiVariables = true;
 services.xserver.enable = true;
 services.xserver.displayManager.gdm.enable = true;
 services.xserver.desktopManager.gnome.enable = true;
+home-manager.backupFileExtension = "backup";
 
  # sound.enable = true;
 #hardware.pulseaudio.enable= true;
@@ -36,6 +37,8 @@ google-chrome
 dconf
 gsettings-desktop-schemas
 git
+blesh
+home-manager
 ];
 
 programs.dconf.enable = true;
@@ -67,6 +70,18 @@ systemd.user.services.set-wallpaper = {
       })
     ];
   };
+
+
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+
+
+environment.shellInit = ''
+  if [[ -f "/etc/profiles/per-user/$USER/share/blesh/ble.sh" ]]; then
+    source "/etc/profiles/per-user/$USER/share/blesh/ble.sh"
+  fi
+'';
+
 
 
   # networking.hostName = "nixos"; # Define your hostname.

@@ -1,0 +1,30 @@
+# Build artifacts
+/result
+/result-*
+
+# Flake lock file if you want to exclude it (optional)
+# But usually better to track it!
+# /flake.lock
+
+# Editor/IDE files
+*.swp
+*.swo
+*.bak
+*~
+.DS_Store
+.vscode/
+.idea/
+
+# Home Manager state (sometimes)
+home-manager-generation
+.hm-*
+
+# Secrets (you should manage them separately)
+secrets.nix
+secrets/
+
+# Logs or debug
+*.log
+
+# Nix GC roots (if symlinked)
+.nix-gc-root
