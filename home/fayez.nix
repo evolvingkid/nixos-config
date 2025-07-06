@@ -17,7 +17,7 @@ in {
       fi
 
       export BASH_IT="${config.home.homeDirectory}/.bash_it"
-      export BASH_IT_THEME="powerline-multiline"
+      export BASH_IT_THEME="clean"
       source "$BASH_IT/bash_it.sh"
     '';
 
