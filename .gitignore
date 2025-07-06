@@ -28,3 +28,5 @@ secrets/
 
 # Nix GC roots (if symlinked)
 .nix-gc-root
+
+home/venv-node/*

@@ -19,6 +19,12 @@ in {
       export BASH_IT="${config.home.homeDirectory}/.bash_it"
       export BASH_IT_THEME="clean"
       source "$BASH_IT/bash_it.sh"
+
+      eval "$(nodenv init - bash)"
+
+	export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
     '';
 
   };

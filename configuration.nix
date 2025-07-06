@@ -39,9 +39,16 @@ gsettings-desktop-schemas
 git
 blesh
 home-manager
+vscode
+nodenv
+nodejs_20
+android-studio
+jdk17
+watchman
 ];
 
 programs.dconf.enable = true;
+programs.nix-ld.enable = true;
 
 systemd.user.services.set-wallpaper = {
     description = "Set GNOME wallpaper using gsettings";
